@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace BaiVeNha4
+{
+    public partial class Form2 : Form
+    {
+        public Form2(string imageFile)
+        {
+            InitializeComponent();
+            //cho picturebox hiển thị file ảnh Text imageFile. Substring (imageFile. LastIndexOf('\\')+1);
+            pictureBox1.Image = System.Drawing.Image.FromFile(imageFile); //hiển thị tên của file ảnh lên title bar
+            this.Text = imageFile.Substring(imageFile.LastIndexOf('\\') + 1);
+        }
+        
+        public Form2()
+        {
+            InitializeComponent();
+        }
+    }
+}
